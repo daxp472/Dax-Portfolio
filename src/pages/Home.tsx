@@ -12,10 +12,10 @@ import Typed from 'typed.js';
 const skills = [
   { icon: <Code2 />, name: 'React', progress: 90 },
   { icon: <Palette />, name: 'Tailwind CSS', progress: 85 },
-  { icon: <Database />, name: 'MongoDB', progress: 80 },
+  { icon: <Database />, name: 'MongoDB', progress: 75 },
   { icon: <Server />, name: 'Node.js', progress: 85 },
-  { icon: <Blocks />, name: 'ShadCN', progress: 80 },
-  { icon: <Layers />, name: 'Material-UI', progress: 75 },
+  { icon: <Blocks />, name: 'ShadCN', progress: 60 },
+  { icon: <Layers />, name: 'Material-UI', progress: 65 },
 ];
 
 const services = [

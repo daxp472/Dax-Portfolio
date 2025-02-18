@@ -9,17 +9,10 @@ import TechStackChart from '@/components/projects/TechStackChart';
 
 const projects = [
   {
-    title: 'E-commerce Platform',
-    description: 'A full-stack e-commerce solution with real-time inventory management.',
-    techStack: ['React', 'Node.js', 'MongoDB', 'Express'],
-    liveUrl: 'https://example.com',
-    githubUrl: 'https://github.com/example',
-  },
-  {
     title: 'Task Management App',
     description: 'Collaborative task management with real-time updates.',
     techStack: ['React', 'Firebase', 'Tailwind CSS'],
-    liveUrl: 'https://example.com',
+    liveUrl: 'https://task-sync-1.netlify.app/',
     githubUrl: 'https://github.com/daxp472/TaskSync',
   },
   {
@@ -29,6 +22,13 @@ const projects = [
     liveUrl: 'https://weather-sphere-1.netlify.app/',
     githubUrl: 'https://github.com/daxp472/WeatherSphere',
   },
+  {
+    title: "Ultimate Explore",
+    description: "A React-based project utilizing external APIs for dynamic data fetching and exploration.",
+    techStack: ["React", "External APIs"],
+    liveUrl: "https://api-project-by-dax.netlify.app/",
+    githubUrl: "https://github.com/daxp472/React-API"
+  },  
   {
     title: 'PrimePlay',
     description: 'A movie search app with ratings and trailer view.',

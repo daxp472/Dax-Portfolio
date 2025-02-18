@@ -23,7 +23,7 @@ const ResumeDownload = () => {
   const handleDownload = (format: 'pdf' | 'docx') => {
     // Replace these URLs with your actual resume file URLs
     const files = {
-      pdf: '/resume-dax-patel.pdf',
+      pdf: '../../assets/Dax Patel CV.pdf',
       docx: '/resume-dax-patel.docx'
     };
 
