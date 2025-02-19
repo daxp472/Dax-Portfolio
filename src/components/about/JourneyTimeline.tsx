@@ -7,13 +7,13 @@ const timelineData = [
     icon: <School />,
     title: 'JNV BK (9th - 12th)',
     description: 'Basic learning phase. Got my first interest in coding here!',
-    date: '2019 - 2023',
+    date: '2020 - 2024',
   },
   {
     icon: <Laptop />,
     title: 'Rai University',
     description: 'Currently exploring advanced development & real-world projects.',
-    date: '2023 - Present',
+    date: '2024 - Present',
   },
   {
     icon: <Code />,
