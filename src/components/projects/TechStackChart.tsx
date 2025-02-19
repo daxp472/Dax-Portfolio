@@ -10,12 +10,12 @@ interface TechStackItem {
 const techStack: TechStackItem[] = [
   { name: 'React', level: 90, category: 'Frontend' },
   { name: 'Tailwind CSS', level: 85, category: 'Frontend' },
-  { name: 'GSAP', level: 80, category: 'Frontend' },
-  { name: 'Node.js', level: 75, category: 'Backend' },
+  { name: 'GSAP', level: 60, category: 'Frontend' },
+  { name: 'Node.js', level: 85, category: 'Backend' },
   { name: 'Express', level: 70, category: 'Backend' },
   { name: 'Firebase', level: 80, category: 'Backend' },
   { name: 'RESTful APIs', level: 85, category: 'APIs' },
-  { name: 'GraphQL', level: 70, category: 'APIs' },
+  { name: 'GraphQL', level: 65, category: 'APIs' },
 ];
 
 const TechStackChart = () => {
