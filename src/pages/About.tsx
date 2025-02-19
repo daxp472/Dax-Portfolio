@@ -18,7 +18,7 @@ const hobbies = [
   {
     icon: <Gamepad2 />,
     title: 'Gaming',
-    description: 'BGMI, PUBG – Competitive gaming & strategy development.',
+    description: 'BGMI, PUBG, 2048 – Competitive gaming & strategy development.',
   },
   {
     icon: <Cpu />,
