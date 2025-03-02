@@ -53,8 +53,8 @@ const ProjectCard = ({ title, description, techStack, liveUrl, githubUrl, delay 
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05 }}
               >
-                <Badge 
-                  variant="secondary" 
+                <Badge
+                  variant="secondary"
                   className="border-[#5E65EF]/30 hover:border-[#5E65EF] transition-colors duration-300"
                   style={{
                     borderWidth: '1px',
@@ -69,12 +69,11 @@ const ProjectCard = ({ title, description, techStack, liveUrl, githubUrl, delay 
         </CardContent>
         <CardFooter className="flex gap-4">
           {liveUrl && (
-            <Button variant="default" size="sm" asChild className="glow-on-hover">
-              <a href={liveUrl} target="_blank" rel="noopener noreferrer">
-                <motion.span 
-                  className="hover-rotate inline-block"
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
+            <Button variant="default" size="sm" asChild className="glow-on-hover relative z-10">
+              <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="relative inline-block transition duration-300 transform">
+                <motion.span
+                  className="hover:rotate-180 inline-block transition duration-100"
+                  whileHover={{ rotate: 180 }}
                 >
                   <ExternalLink className="w-4 h-4 mr-2" />
                 </motion.span>
@@ -83,25 +82,25 @@ const ProjectCard = ({ title, description, techStack, liveUrl, githubUrl, delay 
             </Button>
           )}
           {githubUrl && (
-            <Button 
-              variant="outline" 
-              size="sm" 
+            <Button
+              variant="outline"
+              size="sm"
               asChild
-              className="glow-on-hover text-[#5E65EF] hover:text-[#5E65EF] hover:border-[#5E65EF] transition-colors duration-300"
+              className="glow-on-hover relative z-10 text-[#5E65EF] hover:text-[#5E65EF] hover:border-[#5E65EF] transition-colors duration-300"
             >
-              <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-                <motion.span 
-                  className="hover-rotate inline-block"
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
+              <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="relative inline-block transition duration-300 transform">
+                <motion.span
+                  className="inline-block transition-transform duration-200 ease-in-out"
+                  whileHover={{ rotate: 180 }}
                 >
-                  <Github className="w-4 h-4 mr-2" />
+                  <Github className="w-4 h-4 mr-2 align-middle" />
                 </motion.span>
                 Source Code
               </a>
             </Button>
           )}
         </CardFooter>
+
       </Card>
     </motion.div>
   );

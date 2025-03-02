@@ -6,6 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import ProjectCard from '@/components/projects/ProjectCard';
 import FeaturedProject from '@/components/projects/FeaturedProject';
 import TechStackChart from '@/components/projects/TechStackChart';
+import { VolumeX, Volume2 } from 'lucide-react';
 
 const projects = [
   {
@@ -97,6 +98,7 @@ const allTechStacks = Array.from(
 
 const Projects = () => {
   const [selectedTech, setSelectedTech] = useState<string | null>(null);
+  const [isMuted, setIsMuted] = useState(true);
 
   const filteredProjects = selectedTech
     ? projects.filter((project) => project.techStack.includes(selectedTech))
@@ -109,6 +111,72 @@ const Projects = () => {
       exit={{ opacity: 0 }}
       className="min-h-screen pt-20"
     >
+      {/* GameZone Video Showcase */}
+      <section className="relative py-16 bg-gradient-to-r from-[#5E65EF]/20 via-primary/10 to-[#5E65EF]/20">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-10"
+          >
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#5E65EF] to-primary">
+              GameZone Project Showcase
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Watch my detailed walkthrough of the GameZone project, explaining key features and implementation details
+            </p>
+          </motion.div>
+          
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="relative max-w-4xl mx-auto rounded-xl overflow-hidden shadow-[0_0_30px_rgba(94,101,239,0.3)]"
+          >
+            <div className="relative aspect-video">
+              <iframe 
+                src={`https://www.youtube.com/embed/GdH-gLpMqZY?autoplay=1&mute=${isMuted ? 1 : 0}&loop=1&playlist=GdH-gLpMqZY`}
+                title="GameZone Project Walkthrough by Dax Patel" 
+                className="absolute inset-0 w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+              
+              <Button 
+                variant="outline" 
+                size="icon" 
+                className="absolute bottom-4 right-4 bg-background/80 backdrop-blur-sm hover:bg-background/90 z-10"
+                onClick={() => setIsMuted(!isMuted)}
+              >
+                {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
+              </Button>
+            </div>
+            
+            <motion.div 
+              className="absolute inset-0 border-4 border-[#5E65EF]/30 rounded-xl pointer-events-none"
+              animate={{ 
+                boxShadow: ['0 0 10px rgba(94,101,239,0.3)', '0 0 30px rgba(94,101,239,0.6)', '0 0 10px rgba(94,101,239,0.3)'] 
+              }}
+              transition={{ duration: 2, repeat: Infinity }}
+            />
+          </motion.div>
+          
+          <div className="flex justify-center mt-8 gap-4">
+            <Button asChild className="bg-[#5E65EF] hover:bg-[#5E65EF]/90">
+              <a href="https://gamezoneofficial.netlify.app" target="_blank" rel="noopener noreferrer">
+                Visit Live Site
+              </a>
+            </Button>
+            <Button variant="outline" asChild className="border-[#5E65EF] text-[#5E65EF] hover:bg-[#5E65EF]/10">
+              <a href="https://github.com/daxp472/game_zone" target="_blank" rel="noopener noreferrer">
+                View Source Code
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Hero Section */}
       <section className="relative min-h-[40vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10" />
@@ -184,6 +252,10 @@ const Projects = () => {
                     variant={selectedTech === tech ? 'default' : 'outline'}
                     onClick={() => setSelectedTech(tech)}
                     size="sm"
+                    className={selectedTech === tech ? 
+                      "bg-[#FAFAFA] hover:bg-[#FAFAFA]/90" : 
+                      "border-[#5E65EF]/30 hover:border-[#4952ff] hover:bg-[#5E65EF]/10"
+                    }
                   >
                     {tech}
                   </Button>
