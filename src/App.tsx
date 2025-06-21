@@ -20,23 +20,23 @@ function usePageTracking() {
   const location = useLocation();
 
   useEffect(() => {
-    // Load gtag.js script once
-    if (!document.querySelector(`script[src*="gtag/js?id=${GA_TRACKING_ID}"]`)) {
+    if (!window.gtag) {
       const script = document.createElement('script');
       script.async = true;
       script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`;
       document.head.appendChild(script);
 
       window.dataLayer = window.dataLayer || [];
-      function gtag(...args: any[]) {
+      window.gtag = function gtag(...args: any[]) {
         window.dataLayer.push(args);
-      }
-      window.gtag = gtag;
+      };
 
-      gtag('js', new Date());
+      window.gtag('js', new Date());
+      window.gtag('config', GA_TRACKING_ID);
     }
+  }, []);
 
-    // Send page view
+  useEffect(() => {
     if (window.gtag) {
       window.gtag('config', GA_TRACKING_ID, {
         page_path: location.pathname + location.search,
